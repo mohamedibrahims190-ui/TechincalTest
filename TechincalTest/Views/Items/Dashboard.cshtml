@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+<body style="background-color: #FFD700;">
+    <h1>
+        @ViewData["Title"]
+        <img src="~/images/my-icon.png" alt="icon" style="width:20px;height:20px;" />
+    </h1>
+
+    <div class="row mt-4">
+        <!-- Show List Card -->
+        <div class="col-md-6 mb-3">
+            <div class="card text-center h-100 shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-card-list" style="font-size: 50px;"></i>
+                    <h4 class="card-title mt-2">Show Items</h4>
+                    <p class="card-text">View all items in the system.</p>
+                    <a asp-action="Index" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add New Item Card -->
+        <div class="col-md-6 mb-3">
+            <div class="card text-center h-100 shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-plus-circle" style="font-size: 50px;"></i>
+                    <h4 class="card-title mt-2">Add Item</h4>
+                    <p class="card-text">Add a new item to the list.</p>
+                    <a asp-action="Create" class="btn btn-success">Create</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
