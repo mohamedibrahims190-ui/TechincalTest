@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TechincalTest.Models.Item>
+<body style="background-color:khaki">
+    @{
+        ViewData["Title"] = "Items List";
+    }
+
+    <h1>@ViewData["Title"]</h1>
+</body>
+
+<p>
+    <a asp-action="Create">Add New Item</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
