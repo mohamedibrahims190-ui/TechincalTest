@@ -1,22 +1,22 @@
-﻿@model IEnumerable<TechincalTest.Models.Item>
-<body style="background-color:khaki">
-    @{
-        ViewData["Title"] = "Items List";
-    }
+﻿@model IEnumerable<TechincalTest.Models.Users>
 
-    <h1>@ViewData["Title"]</h1>
-</body>
+@{
+    ViewData["Title"] = "Items List";
+}
+
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a asp-action="Create">Add New Item</a>
+    <a asp-action="Create" class="btn btn-success">Add New Item</a>
 </p>
 
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
             <th>Description</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -26,6 +26,9 @@
                 <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Description</td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Update</a>
+                </td>
             </tr>
         }
     </tbody>

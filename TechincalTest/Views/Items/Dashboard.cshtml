@@ -1,33 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Dashboard";
 }
-<body style="background-color: #FFD700;">
-    <h1>
-        @ViewData["Title"]
-        <img src="~/images/my-icon.png" alt="icon" style="width:20px;height:20px;" />
+<body style="background-color: #FFDA03;">
+    <h1 class="fw-bold">
+        <i class="fas fa-tachometer-alt"></i> @ViewData["Title"]
     </h1>
 
     <div class="row mt-4">
-        <!-- Show List Card -->
-        <div class="col-md-6 mb-3">
-            <div class="card text-center h-100 shadow-sm">
+        <div class="col-md-3 mb-3">
+            <div class="card text-center h-100 border-0 text-white"
+                 style="border-radius: 20px; background: linear-gradient(135deg, #000068, #1c1c84);">
                 <div class="card-body">
-                    <i class="bi bi-card-list" style="font-size: 50px;"></i>
-                    <h4 class="card-title mt-2">Show Items</h4>
+                    <i class="bi bi-card-list" style="font-size: 55px;"></i>
+                    <h4 class="card-title mt-2 fw-bold">Show Items</h4>
                     <p class="card-text">View all items in the system.</p>
-                    <a asp-action="Index" class="btn btn-primary">View</a>
+                    <a asp-action="Index" class="btn btn-light rounded-pill px-4">View</a>
                 </div>
             </div>
         </div>
 
         <!-- Add New Item Card -->
-        <div class="col-md-6 mb-3">
-            <div class="card text-center h-100 shadow-sm">
+        <div class="col-md-3 mb-3">
+            <div class="card text-center h-100 border-0 text-white"
+                 style="border-radius: 20px; background: linear-gradient(135deg, #000068, #1c1c84);">
                 <div class="card-body">
-                    <i class="bi bi-plus-circle" style="font-size: 50px;"></i>
-                    <h4 class="card-title mt-2">Add Item</h4>
+                    <i class="bi bi-plus-circle" style="font-size: 55px;"></i>
+                    <h4 class="card-title mt-2 fw-bold">Add Item</h4>
                     <p class="card-text">Add a new item to the list.</p>
-                    <a asp-action="Create" class="btn btn-success">Create</a>
+                    <a asp-action="Create" class="btn btn-light rounded-pill px-4">Create</a>
                 </div>
             </div>
         </div>

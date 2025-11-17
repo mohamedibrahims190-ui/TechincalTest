@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using TechincalTest.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Move AddDbContext before builder.Build()
+builder.Services.AddDbContext<TechincalTestDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 

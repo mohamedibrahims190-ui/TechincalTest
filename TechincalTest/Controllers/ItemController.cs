@@ -1,46 +1,45 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using TechincalTest.Data;
 using TechincalTest.Models;
 
 namespace TechincalTest.Controllers
 {
     public class ItemsController : Controller
     {
-        // Simple in-memory store for demo purposes
-        private static readonly List<Item> _items = new List<Item>
+        private readonly TechincalTestDbContext _context;
+
+        public ItemsController(TechincalTestDbContext context)
         {
-            new Item { Id = 1, Name = "Sample Item", Description = "This is a sample." }
-        };
+            _context = context;
+        }
 
         public IActionResult Dashboard()
         {
             return View();
         }
 
-        // GET: /Items or /
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_items);
+            var items = await _context.Users.ToListAsync();
+            return View(items);
         }
 
-        // GET: /Items/Create
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: /Items/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Item item)
+        public async Task<IActionResult> Create(Users item)
         {
             if (!ModelState.IsValid)
-            {
                 return View(item);
-            }
 
-            item.Id = _items.Any() ? _items.Max(i => i.Id) + 1 : 1;
-            _items.Add(item);
+            _context.Users.Add(item);
+            await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
