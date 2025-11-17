@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TechincalTest.Data;
 
@@ -10,9 +11,11 @@ using TechincalTest.Data;
 namespace TechincalTest.Migrations
 {
     [DbContext(typeof(TechincalTestDbContext))]
-    partial class TechincalTestDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251117073713_UpdateItemModel")]
+    partial class UpdateItemModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
