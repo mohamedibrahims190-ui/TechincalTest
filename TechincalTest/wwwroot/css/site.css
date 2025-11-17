@@ -1,22 +1,112 @@
+<style >
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Card hover effects */
+.card:hover {
+    transform: translateY(-8px);
+}
+
+    .card:hover i {
+        transform: scale(1.2);
+        transition: 0.3s;
+    }
+
+/* Button hover effects */
+.btn-light:hover {
+    background-color: #ffe066;
+    color: #000068;
+}
+
+.btn-warning:hover {
+    background-color: #ffbf00;
+    color: #000;
+}
+
+.btn-danger:hover {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+/* Table hover */
+table tbody tr:hover {
+    background-color: #f0f8ff;
+    transition: 0.3s;
+}
+
+/* Responsive text & button adjustments */
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #1c1c84, #0000ff);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #343a40, #6c757d);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #1c1c84, #0000ff);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #343a40, #6c757d);
+}
+
+/* Card hover effect for inputs */
+.form-control:focus {
+    box-shadow: 0 0 0 0.15rem rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+</style >
