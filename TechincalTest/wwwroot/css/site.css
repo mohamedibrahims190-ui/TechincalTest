@@ -109,4 +109,48 @@ table tbody tr:hover {
         margin-bottom: 10px;
     }
 }
+
+/* Rounded pill input */
+.fancy-input {
+    border-radius: 50px !important;
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #fff;
+    border: none;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient Blue Button */
+.fancy-btn-blue {
+    border-radius: 50px;
+    font-size: 17px;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #0011ff, #0f49f1);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .fancy-btn-blue:hover {
+        transform: scale(1.05);
+    }
+
+/* Gradient Grey Button */
+.fancy-btn-grey {
+    border-radius: 50px;
+    font-size: 17px;
+    padding: 10px 25px;
+    background: linear-gradient(45deg, #5a5a5a, #8d8d8d);
+    border: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+    .fancy-btn-grey:hover {
+        transform: scale(1.05);
+    }
+
+
 </style >
