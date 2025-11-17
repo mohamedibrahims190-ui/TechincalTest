@@ -33,16 +33,44 @@ namespace TechincalTest.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Users item)
+        public async Task<IActionResult> Create(Users user)
         {
             if (!ModelState.IsValid)
-                return View(item);
+            {
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                {
+                    return Json(new
+                    {
+                        success = false,
+                        errors = ModelState.ToDictionary(
+                            kvp => kvp.Key,
+                            kvp => kvp.Value.Errors.Select(e => e.ErrorMessage).ToArray()
+                        )
+                    });
+                }
+                return View(user);
+            }
 
-            _context.Users.Add(item);
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new
+                {
+                    success = true,
+                    user = new
+                    {
+                        id = user.Id,
+                        name = user.Name,
+                        role = user.Role
+                    }
+                });
+            }
             return RedirectToAction(nameof(Index));
         }
+
+
 
         [HttpGet]
         public async Task<IActionResult> Edit(int? id)
