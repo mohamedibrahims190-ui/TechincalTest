@@ -2,7 +2,7 @@
 
 namespace TechincalTest.Models
 {
-    public class Item
+    public class Users
     {
         public int Id { get; set; }
 
